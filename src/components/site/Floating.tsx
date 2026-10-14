@@ -25,7 +25,7 @@ export function FloatingActions() {
           </motion.button>
         )}
       </AnimatePresence>
-      <a href={`tel:${siteConfig.phones[0].tel}`} aria-label="Call us" className="animate-pulse-ring flex h-13 w-13 items-center justify-center rounded-full bg-navy p-3.5 text-gold shadow-lift transition-transform hover:scale-110">
+      <a href={`tel:${siteConfig.phones[0]!.tel}`} aria-label="Call us" className="animate-pulse-ring flex h-13 w-13 items-center justify-center rounded-full bg-navy p-3.5 text-gold shadow-lift transition-transform hover:scale-110">
         <Phone className="h-6 w-6" />
       </a>
       <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" className="animate-pulse-ring flex items-center justify-center rounded-full bg-gold-gradient p-3.5 text-gold-foreground shadow-gold transition-transform hover:scale-110">

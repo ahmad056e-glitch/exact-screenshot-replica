@@ -36,7 +36,7 @@ function Hero() {
     const t = setInterval(() => setI((v) => (v + 1) % slides.length), 7000);
     return () => clearInterval(t);
   }, [i]);
-  const s = slides[i];
+  const s = slides[i]!;
   return (
     <section className="relative h-[86vh] min-h-[560px] overflow-hidden bg-navy-deep">
       <AnimatePresence mode="sync">
@@ -106,7 +106,7 @@ function About() {
             <span className="animate-pulse-ring flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gold text-gold-foreground"><Phone className="h-6 w-6" /></span>
             <div>
               <p className="text-sm text-navy-foreground/75">Need professional financial guidance?</p>
-              <a href={`tel:${siteConfig.phones[0].tel}`} className="font-serif text-3xl font-semibold text-navy-foreground hover:text-gold">{siteConfig.phones[0].label}</a>
+              <a href={`tel:${siteConfig.phones[0]!.tel}`} className="font-serif text-3xl font-semibold text-navy-foreground hover:text-gold">{siteConfig.phones[0]!.label}</a>
             </div>
           </Reveal>
         </div>
@@ -148,7 +148,7 @@ function Stats() {
     <section className="relative overflow-hidden bg-navy-gradient py-20">
       <div className="container-x grid gap-10 text-center md:grid-cols-3">
         {siteConfig.stats.map((s, i) => {
-          const Icon = icons[i];
+          const Icon = icons[i]!;
           return (
             <Reveal key={s.key} delay={i * 0.1} className="group flex flex-col items-center">
               <IconBadge icon={Icon} size="lg" tone="dark" />
