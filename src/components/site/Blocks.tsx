@@ -106,7 +106,7 @@ export function CtaBanner() {
           <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-semibold text-navy-foreground md:text-6xl">Ready to speak with a professional?</h2>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Button asChild variant="gold" size="xl"><Link to="/contact">Book a Consultation <ArrowRight /></Link></Button>
-            <Button asChild variant="outlineLight" size="xl"><a href={`tel:${siteConfig.phones[0].tel}`}><Phone /> Call Now</a></Button>
+            <Button asChild variant="outlineLight" size="xl"><a href={`tel:${siteConfig.phones[0]!.tel}`}><Phone /> Call Now</a></Button>
           </div>
         </Reveal>
       </div>

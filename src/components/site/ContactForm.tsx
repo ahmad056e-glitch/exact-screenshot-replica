@@ -74,11 +74,11 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       return;
     }
     for (let i = 0; i < files.length; i++) {
-      const f = files[i].file;
+      const f = files[i]!.file;
       setFiles((p) => p.map((x, j) => (j === i ? { ...x, state: "uploading" } : x)));
       const safe = f.name.replace(/[^\w.-]+/g, "_").slice(-100);
       const path = `messages/${id}/${crypto.randomUUID()}-${safe}`;
-      const up = await supabase.storage.from("client-uploads").upload(path, f, { contentType: f.type || undefined });
+      const up = await supabase.storage.from("client-uploads").upload(path, f, { contentType: f.type || "application/octet-stream" });
       let ok = !up.error;
       if (ok) {
         const r = await supabase.from("message_files").insert({ message_id: id, file_path: path, file_name: f.name, mime_type: f.type, size_bytes: f.size });

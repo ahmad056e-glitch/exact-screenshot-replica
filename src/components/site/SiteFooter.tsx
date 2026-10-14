@@ -19,7 +19,7 @@ export function SiteFooter() {
           <h3 className="text-xl font-semibold text-navy-foreground">Quick Links</h3>
           <div className="mt-2 h-px w-10 bg-gold" />
           <ul className="mt-5 space-y-2.5 text-sm">
-            {[["/", "Home"], ["/services", "Services"], ["/about", "About Us"], ["/contact", "Contact"]].map(([to, l]) => (
+            {([["/", "Home"], ["/services", "Services"], ["/about", "About Us"], ["/contact", "Contact"]] as const).map(([to, l]) => (
               <li key={to}><Link to={to} className="transition-colors hover:text-gold">{l}</Link></li>
             ))}
           </ul>
