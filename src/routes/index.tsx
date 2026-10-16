@@ -174,10 +174,10 @@ function Featured() {
         {items.map((it, i) => (
           <Reveal key={it.slug} delay={i * 0.1}>
             <Link to="/services/$slug" params={{ slug: it.slug }} className={`group block h-full card-premium card-hover p-8`}>
-              <IconBadge icon={it.icon} size="lg" tone={i === 1 ? "dark" : "light"} />
-              <h3 className={`mt-6 text-3xl font-semibold ${i === 1 ? "text-navy-foreground" : "text-navy"}`}>{it.title}</h3>
-              <p className={`mt-3 text-sm leading-relaxed ${i === 1 ? "text-navy-foreground/75" : "text-muted-foreground"}`}>{it.text}</p>
-              <span className={`mt-6 inline-flex items-center gap-2 text-sm font-semibold ${i === 1 ? "text-gold" : "text-navy"}`}>Learn more <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" /></span>
+              <IconBadge icon={it.icon} size="lg"  />
+              <h3 className={`mt-6 text-3xl font-semibold text-navy`}>{it.title}</h3>
+              <p className={`mt-3 text-sm leading-relaxed text-muted-foreground`}>{it.text}</p>
+              <span className={`mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy`}>Learn more <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 text-gold" /></span>
             </Link>
           </Reveal>
         ))}
