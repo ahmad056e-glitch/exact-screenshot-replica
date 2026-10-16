@@ -9,18 +9,18 @@ import { IconBadge, Reveal } from "./Reveal";
 export function PageBanner({ title, crumbs, image = images.hero3 }: { title: string; crumbs: { label: string; to?: string }[]; image?: string }) {
   return (
     <section className="relative overflow-hidden">
-      <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover animate-kenburns" width={1920} height={1088} />
-      <div className="absolute inset-0 bg-hero-overlay" />
+      <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover" width={1920} height={1088} />
+      <div className="absolute inset-0 bg-black/40" />
       <div className="container-x relative py-24 md:py-32">
-        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-5xl font-semibold text-navy-foreground md:text-6xl">
+        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-4xl font-semibold text-white [text-shadow:0_1px_8px_rgb(0_0_0/0.3)] md:text-5xl">
           {title}
         </motion.h1>
-        <nav aria-label="Breadcrumb" className="mt-5 flex flex-wrap items-center gap-2 text-sm text-navy-foreground/80">
-          <Link to="/" className="hover:text-gold">Home</Link>
+        <nav aria-label="Breadcrumb" className="mt-5 flex flex-wrap items-center gap-2 text-sm text-white/90">
+          <Link to="/" className="hover:text-white">Home</Link>
           {crumbs.map((c) => (
             <span key={c.label} className="flex items-center gap-2">
-              <ChevronRight className="h-4 w-4 text-gold" />
-              {c.to ? <Link to={c.to} className="hover:text-gold">{c.label}</Link> : <span className="text-gold">{c.label}</span>}
+              <ChevronRight className="h-4 w-4 text-white/70" />
+              {c.to ? <Link to={c.to} className="hover:text-white">{c.label}</Link> : <span className="font-semibold text-white">{c.label}</span>}
             </span>
           ))}
         </nav>
@@ -41,7 +41,7 @@ export function ServiceCard({ s, i = 0 }: { s: Service; i?: number }) {
           <h3 className="text-2xl font-semibold text-navy">{s.title}</h3>
           <p className="mt-2 line-clamp-2 flex-1 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
           <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy">
-            Learn more <ArrowRight className="h-4 w-4 text-gold transition-transform transition-transform duration-300 group-hover:translate-x-1" />
+            Let's start <ArrowRight className="h-4 w-4 text-gold transition-transform transition-transform duration-300 group-hover:translate-x-1" />
           </span>
         </div>
       </Link>
@@ -97,12 +97,12 @@ export function SkillBar({ label, value, i }: { label: string; value: number; i:
 export function CtaBanner() {
   return (
     <section className="relative overflow-hidden">
-      <img src={images.hero1} alt="Advisors reviewing financial reports" loading="lazy" className="absolute inset-0 h-full w-full object-cover" width={1920} height={1088} />
-      <div className="absolute inset-0 bg-navy-deep/85" />
+      <img src={images.cta} alt="Clean office desk in morning light" loading="lazy" className="absolute inset-0 h-full w-full object-cover" width={1920} height={1088} />
+      <div className="absolute inset-0 bg-black/45" />
       <div className="container-x relative py-24 text-center">
         <Reveal>
-          <p className="eyebrow">Chartered Firm</p>
-          <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-semibold text-navy-foreground md:text-6xl">Ready to speak with a professional?</h2>
+          <p className="eyebrow text-white/85">Chartered Firm</p>
+          <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold text-white md:text-5xl">Ready to speak with a professional?</h2>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Button asChild variant="gold" size="xl"><Link to="/contact">Book a Consultation <ArrowRight /></Link></Button>
             <Button asChild variant="outlineLight" size="xl"><a href={`tel:${siteConfig.phones[0]!.tel}`}><Phone /> Call Now</a></Button>

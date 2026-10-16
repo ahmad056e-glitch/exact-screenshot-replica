@@ -16,9 +16,9 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        gold: "group bg-gold-gradient text-gold-foreground font-semibold rounded-full shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105 [&_svg]:transition-transform [&_svg]:duration-300 hover:[&_svg]:translate-x-1",
-        outlineLight: "group rounded-full border border-navy-foreground/40 text-navy-foreground font-semibold backdrop-blur-sm transition-all duration-300 hover:bg-navy-foreground hover:text-navy [&_svg]:transition-transform hover:[&_svg]:translate-x-1",
-        outlineNavy: "group rounded-full border border-navy/30 text-navy font-semibold transition-all duration-300 hover:bg-navy hover:text-navy-foreground [&_svg]:transition-transform hover:[&_svg]:translate-x-1",
+        gold: "group bg-primary text-primary-foreground font-semibold rounded-md transition-colors duration-200 hover:bg-primary/90 [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-0.5",
+        outlineLight: "group rounded-md border border-navy-foreground/60 text-navy-foreground font-semibold transition-colors duration-200 hover:bg-navy-foreground hover:text-navy [&_svg]:transition-transform hover:[&_svg]:translate-x-1",
+        outlineNavy: "group rounded-md border border-navy/30 text-navy font-semibold transition-all duration-300 hover:bg-navy hover:text-navy-foreground [&_svg]:transition-transform hover:[&_svg]:translate-x-1",
       },
       size: {
         default: "h-9 px-4 py-2",

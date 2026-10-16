@@ -1,10 +1,20 @@
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
-import advisory from "@/assets/svc-advisory.jpg";
+import cta from "@/assets/cta.jpg";
+import about from "@/assets/about.jpg";
+import formation from "@/assets/svc-formation.jpg";
+import audit from "@/assets/svc-audit.jpg";
+import accounting from "@/assets/svc-accounting.jpg";
 import tax from "@/assets/svc-tax.jpg";
-import consulting from "@/assets/svc-consulting.jpg";
+import compliance from "@/assets/svc-compliance.jpg";
+import financial from "@/assets/svc-financial.jpg";
+import management from "@/assets/svc-management.jpg";
 import it from "@/assets/svc-it.jpg";
+import advisory from "@/assets/svc-advisory.jpg";
+import extra1 from "@/assets/extra-1.jpg";
+import extra2 from "@/assets/extra-2.jpg";
+import extra3 from "@/assets/extra-3.jpg";
 import {
   Building2,
   ShieldCheck,
@@ -18,7 +28,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-export const images = { hero1, hero2, hero3, advisory, tax, consulting, it };
+export const images = { hero1, hero2, hero3, cta, about, formation, audit, accounting, tax, compliance, financial, management, it, advisory, extra1, extra2, extra3, consulting: about };
 
 export const siteConfig = {
   name: "Sadiq Associates",
@@ -81,8 +91,8 @@ export const services: Service[] = [
     description:
       "Complete assistance in setting up a new legal entity and handling the regulatory requirements of forming a company.",
     icon: Building2,
-    image: advisory,
-    gallery: [advisory, hero3, hero2],
+    image: formation,
+    gallery: [formation, tax, extra1],
     includes: [
       "Company incorporation support",
       "Selection of the right legal structure",
@@ -99,8 +109,8 @@ export const services: Service[] = [
     description:
       "Independent audit services that improve financial transparency, strengthen internal controls and support dependable financial reporting.",
     icon: ShieldCheck,
-    image: hero2,
-    gallery: [hero2, tax, hero1],
+    image: audit,
+    gallery: [audit, compliance, extra2],
     includes: [
       "Financial statement audits",
       "Internal control assessments",
@@ -116,8 +126,8 @@ export const services: Service[] = [
     description:
       "Accurate and up-to-date accounting that shows clearly how your business is performing, including its strengths and weaknesses.",
     icon: Calculator,
-    image: tax,
-    gallery: [tax, hero2, consulting],
+    image: accounting,
+    gallery: [accounting, financial, extra3],
     includes: [
       "Bookkeeping and financial records",
       "Financial statement preparation",
@@ -134,8 +144,8 @@ export const services: Service[] = [
     description:
       "Income tax and sales tax guidance that helps individuals and businesses meet their obligations and manage tax matters effectively.",
     icon: Receipt,
-    image: hero1,
-    gallery: [hero1, tax, hero2],
+    image: tax,
+    gallery: [tax, management, extra1],
     includes: [
       "Income tax consultancy",
       "Sales tax consultancy",
@@ -153,8 +163,8 @@ export const services: Service[] = [
     description:
       "Practical compliance support that helps your organisation meet regulatory, reporting and contractual requirements.",
     icon: ClipboardCheck,
-    image: hero3,
-    gallery: [hero3, advisory, tax],
+    image: compliance,
+    gallery: [compliance, it, extra2],
     includes: [
       "Regulatory compliance reviews",
       "Corporate compliance support",
@@ -171,8 +181,8 @@ export const services: Service[] = [
     description:
       "Clear financial insight and structured advice that helps management evaluate performance, improve controls and make sound decisions.",
     icon: TrendingUp,
-    image: consulting,
-    gallery: [consulting, hero2, hero1],
+    image: financial,
+    gallery: [financial, advisory, extra3],
     includes: [
       "Financial performance analysis",
       "Financial planning support",
@@ -189,8 +199,8 @@ export const services: Service[] = [
     description:
       "Management solutions that improve organisational systems, internal processes, policies and operational effectiveness.",
     icon: Briefcase,
-    image: hero3,
-    gallery: [consulting, hero3, advisory],
+    image: management,
+    gallery: [management, formation, extra1],
     includes: [
       "Management information system development",
       "Accounting information system design",
@@ -209,7 +219,7 @@ export const services: Service[] = [
       "Technology reviews that help businesses choose and implement suitable systems, considering compatibility, cost, efficiency and staff needs.",
     icon: MonitorCog,
     image: it,
-    gallery: [it, consulting, hero3],
+    gallery: [it, audit, extra2],
     includes: [
       "Hardware and software needs assessment",
       "Technology cost-benefit analysis",
@@ -228,7 +238,7 @@ export const services: Service[] = [
       "Professional advice that helps businesses understand commercial agreements, regulatory responsibilities and important corporate matters.",
     icon: Scale,
     image: advisory,
-    gallery: [advisory, hero1, consulting],
+    gallery: [advisory, accounting, extra3],
     includes: [
       "Financial contract reviews",
       "Corporate advisory services",

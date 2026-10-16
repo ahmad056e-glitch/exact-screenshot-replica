@@ -10,13 +10,12 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { FloatingActions, Preloader } from "@/components/site/Floating";
+import { FloatingActions } from "@/components/site/Floating";
 import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/siteConfig";
 
@@ -25,7 +24,7 @@ function NotFoundComponent() {
     <div className="flex min-h-[70vh] items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <p className="eyebrow">Error 404</p>
-        <h1 className="mt-3 font-serif text-7xl font-semibold text-navy">Page not found</h1>
+        <h1 className="mt-3 text-6xl font-semibold text-navy">Page not found</h1>
         <div className="mx-auto mt-5 h-px w-20 bg-gold" />
         <p className="mt-5 text-muted-foreground">The page you're looking for doesn't exist or has been moved.</p>
         <Link to="/" className="mt-8 inline-flex h-12 items-center rounded-full bg-gold-gradient px-7 font-semibold text-gold-foreground shadow-gold">
@@ -89,7 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
@@ -124,13 +123,10 @@ function RootComponent() {
         <Outlet />
       ) : (
         <>
-          <Preloader />
           <SiteHeader />
-          <AnimatePresence mode="wait">
-            <motion.main key={path} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.35 }}>
-              <Outlet />
-            </motion.main>
-          </AnimatePresence>
+          <main>
+            <Outlet />
+          </main>
           <SiteFooter />
           <FloatingActions />
         </>
