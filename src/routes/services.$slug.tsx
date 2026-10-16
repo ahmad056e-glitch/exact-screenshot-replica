@@ -68,7 +68,7 @@ function ServiceDetail() {
             </Reveal>
           </div>
           <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
-            <div className="rounded-3xl bg-card p-6 shadow-soft">
+            <div className="card-premium p-7">
               <h3 className="text-2xl font-semibold text-navy">All Services</h3>
               <div className="mt-4 space-y-1">
                 {services.map((x) => (

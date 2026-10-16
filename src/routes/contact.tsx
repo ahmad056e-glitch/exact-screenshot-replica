@@ -35,7 +35,7 @@ function ContactPage() {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {cards.map((c, i) => (
               <Reveal key={c.title} delay={i * 0.08}>
-                <div className="group h-full rounded-2xl bg-card p-7 shadow-soft transition-all hover:-translate-y-1.5 hover:shadow-lift">
+                <div className="group h-full card-premium card-hover p-7">
                   <IconBadge icon={c.icon} />
                   <h3 className="mt-5 text-2xl font-semibold text-navy">{c.title}</h3>
                   <div className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.body}</div>

@@ -32,7 +32,7 @@ function AboutPage() {
         <div className="container-x grid gap-6 md:grid-cols-3">
           {intro.map((c, i) => (
             <Reveal key={c.title} delay={i * 0.1}>
-              <div className="group h-full rounded-2xl bg-card p-8 shadow-lift transition-transform hover:-translate-y-1.5">
+              <div className="group h-full card-premium card-hover p-8">
                 <IconBadge icon={c.icon} />
                 <h3 className="mt-5 text-2xl font-semibold text-navy">{c.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{c.text}</p>
