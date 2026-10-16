@@ -173,7 +173,7 @@ function Featured() {
       <div className="container-x grid gap-6 md:grid-cols-3">
         {items.map((it, i) => (
           <Reveal key={it.slug} delay={i * 0.1}>
-            <Link to="/services/$slug" params={{ slug: it.slug }} className={`group block h-full rounded-3xl p-9 transition-all duration-500 hover:-translate-y-2 hover:shadow-lift ${i === 1 ? "bg-navy-gradient" : "bg-card shadow-soft"}`}>
+            <Link to="/services/$slug" params={{ slug: it.slug }} className={`group block h-full card-premium card-hover p-8`}>
               <IconBadge icon={it.icon} size="lg" tone={i === 1 ? "dark" : "light"} />
               <h3 className={`mt-6 text-3xl font-semibold ${i === 1 ? "text-navy-foreground" : "text-navy"}`}>{it.title}</h3>
               <p className={`mt-3 text-sm leading-relaxed ${i === 1 ? "text-navy-foreground/75" : "text-muted-foreground"}`}>{it.text}</p>
@@ -191,7 +191,7 @@ export function WhyChoose({ items }: { items: { icon: React.ComponentType<{ clas
     <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {items.map((w, i) => (
         <Reveal key={w.title} delay={i * 0.1}>
-          <div className="group h-full rounded-2xl border bg-card p-8 transition-all duration-500 hover:-translate-y-2 hover:border-gold hover:shadow-lift">
+          <div className="group h-full card-premium card-hover p-8">
             <IconBadge icon={w.icon} />
             <h3 className="mt-5 text-2xl font-semibold text-navy">{w.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{w.text}</p>
