@@ -32,17 +32,16 @@ export function PageBanner({ title, crumbs, image = images.hero3 }: { title: str
 export function ServiceCard({ s, i = 0 }: { s: Service; i?: number }) {
   return (
     <Reveal delay={(i % 3) * 0.1} className="h-full">
-      <Link to="/services/$slug" params={{ slug: s.slug }} className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-soft transition-all duration-500 hover:-translate-y-2 hover:shadow-lift">
+      <Link to="/services/$slug" params={{ slug: s.slug }} className="group flex h-full flex-col overflow-hidden card-premium card-hover">
         <div className="relative aspect-[4/3] overflow-hidden">
-          <img src={s.image} alt={`${s.title} at Sadiq Associates`} loading="lazy" className="h-full w-full object-cover saturate-[0.85] transition-transform duration-700 group-hover:scale-110" width={1024} height={768} />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/50 to-transparent" />
-        </div>
-        <div className="relative flex flex-1 flex-col px-6 pb-6 pt-10">
-          <div className="absolute -top-7 left-6"><IconBadge icon={s.icon} /></div>
+          <img src={s.image} alt={`${s.title} at Sadiq Associates`} loading="lazy" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" width={1024} height={768} />
+                  </div>
+        <div className="relative flex flex-1 flex-col px-7 pb-7 pt-11">
+          <div className="absolute -top-7 left-7"><IconBadge icon={s.icon} /></div>
           <h3 className="text-2xl font-semibold text-navy">{s.title}</h3>
-          <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
+          <p className="mt-2 line-clamp-2 flex-1 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
           <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy">
-            Let's Start <ArrowRight className="h-4 w-4 text-gold transition-transform group-hover:translate-x-1.5" />
+            Learn more <ArrowRight className="h-4 w-4 text-gold transition-transform transition-transform duration-300 group-hover:translate-x-1" />
           </span>
         </div>
       </Link>

@@ -79,7 +79,7 @@ function QuickStrip() {
         <div className="flex snap-x gap-4 overflow-x-auto pb-4 lg:grid lg:grid-cols-9 lg:overflow-visible">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={i * 0.05} className="min-w-[200px] snap-start lg:min-w-0">
-              <Link to="/services/$slug" params={{ slug: s.slug }} className="group flex h-full flex-col items-center rounded-2xl bg-card p-5 text-center shadow-lift transition-all hover:-translate-y-1.5">
+              <Link to="/services/$slug" params={{ slug: s.slug }} className="group flex h-full flex-col items-center card-premium card-hover p-6 text-center">
                 <IconBadge icon={s.icon} size="sm" />
                 <h3 className="mt-3 font-sans text-[0.8rem] font-bold leading-snug text-navy">{s.title}</h3>
                 <p className="mt-1.5 text-[0.72rem] leading-snug text-muted-foreground">{s.short}</p>
@@ -207,7 +207,7 @@ export function Team() {
     <div className="mt-14 grid gap-8 md:grid-cols-3">
       {siteConfig.team.map((m, i) => (
         <Reveal key={i} delay={i * 0.1}>
-          <div className={`group overflow-hidden rounded-3xl bg-card shadow-soft transition-all hover:shadow-lift ${m.placeholder ? "opacity-80" : ""}`}>
+          <div className={`group overflow-hidden card-premium card-hover ${m.placeholder ? "opacity-80" : ""}`}>
             {/* TODO(owner): replace with a real portrait photo */}
             <div className="relative flex aspect-[4/5] items-center justify-center bg-navy-gradient">
               <UserRound className="h-28 w-28 text-navy-foreground/25" />
