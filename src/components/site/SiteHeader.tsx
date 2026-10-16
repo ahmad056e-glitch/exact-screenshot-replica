@@ -9,14 +9,14 @@ import mark from "@/assets/logo-mark.png";
 export function Logo({ light = false }: { light?: boolean }) {
   return (
     <Link to="/" className="flex items-center gap-3" aria-label="Sadiq Associates home">
-      <span className="flex h-12 w-14 items-center justify-center rounded-xl bg-card p-1.5 shadow-soft">
+      <span className="flex h-12 w-14 items-center justify-center rounded-lg bg-card p-1">
         <img src={mark} alt="Sadiq Associates logo" className="h-full w-full object-contain" width={300} height={202} />
       </span>
       <span className="leading-none">
-        <span className={`block font-serif text-xl font-bold tracking-wide ${light ? "text-navy-foreground" : "text-navy"}`}>
+        <span className={`block font-serif text-lg font-semibold ${light ? "text-navy-foreground" : "text-navy"}`}>
           Sadiq Associates
         </span>
-        <span className="mt-1 block text-[0.62rem] font-semibold uppercase tracking-[0.3em] text-gold">Chartered Firm</span>
+        <span className="mt-1 block text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">Chartered Firm</span>
       </span>
     </Link>
   );
@@ -65,7 +65,7 @@ export function SiteHeader() {
       </div>
 
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-card/85 shadow-soft backdrop-blur-lg" : "bg-card"}`}
+        className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-card shadow-soft" : "bg-card"}`}
       >
         <div className={`container-x flex items-center justify-between transition-all ${scrolled ? "h-16" : "h-20"}`}>
           <Logo />
@@ -78,7 +78,7 @@ export function SiteHeader() {
                     <span className={`absolute -bottom-0.5 left-0 h-0.5 bg-gold transition-all ${isActive(n.to) ? "w-full" : "w-0 group-hover:w-full"}`} />
                   </Link>
                   <div className="invisible absolute left-1/2 top-full w-80 -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                    <div className="rounded-2xl border bg-card p-2 shadow-lift">
+                    <div className="rounded-xl border bg-card p-2 shadow-lift">
                       {services.map((s) => (
                         <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-foreground/80 transition-colors hover:bg-gold-soft hover:text-navy">
                           <s.icon className="h-4 w-4 text-gold" /> {s.title}
@@ -109,7 +109,7 @@ export function SiteHeader() {
       <AnimatePresence>
         {open && (
           <>
-            <motion.div className="fixed inset-0 z-[60] bg-navy-deep/60 backdrop-blur-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setOpen(false)} />
+            <motion.div className="fixed inset-0 z-[60] bg-navy-deep/50" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setOpen(false)} />
             <motion.aside
               className="fixed right-0 top-0 z-[70] flex h-full w-[86%] max-w-sm flex-col overflow-y-auto bg-card p-6"
               initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "spring", damping: 28, stiffness: 260 }}
